@@ -23,6 +23,15 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(139, 92, 246, 0.15);
         }
+        /* Smooth Hover Slide / Pop-out Effect */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateX(8px) scale(1.01);
+            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.3), 0 8px 10px -6px rgba(139, 92, 246, 0.3);
+            border-color: rgba(168, 85, 247, 0.5);
+        }
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -62,7 +71,7 @@
 
             <!-- Join Discord Button in Red -->
             <div>
-                <a href="https://discord.gg/ag6SbcdHAr" target="_blank" class="px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold tracking-wide shadow-lg shadow-red-600/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2">
+                <a href="https://discord.gg/vgNyX6Fkkc" target="_blank" class="px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold tracking-wide shadow-lg shadow-red-600/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                     <span>Join Discord</span>
                 </a>
@@ -93,50 +102,50 @@
             </div>
         </div>
 
-        <!-- LAYOUT: LEFT COLUMNS & WELCOME BANNER DISPLAY -->
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- LAYOUT: LEFT NAVIGATION & RIGHT WELCOME BANNER -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
             
-            <!-- LEFT SIDE: FOUR COLUMNS NAVIGATION (Redirect Links) -->
-            <div class="lg:col-span-1 space-y-3">
-                <h3 class="text-xs font-bold tracking-wider text-purple-400 uppercase px-2 mb-2">Rules & Guidelines</h3>
+            <!-- LEFT SIDE: VERTICAL RECTANGULAR NAVIGATION BUTTONS -->
+            <div class="lg:col-span-1 flex flex-col space-y-4">
+                <h3 class="text-xs font-bold tracking-wider text-purple-400 uppercase px-2 mb-1">Rules & Guidelines</h3>
                 
-                <!-- Link to Discord Rules -->
-                <a href="https://thamizhanroleplay.github.io/Discord_rules/" target="_blank" class="w-full text-left px-5 py-3.5 rounded-xl glass-card font-semibold text-gray-300 border-l-4 border-indigo-500 hover:border-indigo-400 hover:text-white transition-all flex items-center justify-between shadow-md">
-                    <span>Discord Rules</span>
-                    <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded">Chat</span>
+                <!-- Discord Rules Button -->
+                <a href="https://thamizhanroleplay.github.io/Discord_rules/" target="_blank" class="w-full h-16 px-5 rounded-xl glass-card font-semibold text-gray-200 border-l-4 border-indigo-500 hover:text-white transition-all flex items-center justify-between shadow-lg hover-lift">
+                    <span class="tracking-wide">Discord Rules</span>
+                    <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-md border border-indigo-500/30">Chat</span>
                 </a>
 
-                <!-- Link to RP Rules -->
-                <a href="https://thamizhanroleplay.github.io/RP-rules/" target="_blank" class="w-full text-left px-5 py-3.5 rounded-xl glass-card font-semibold text-gray-300 border-l-4 border-purple-500 hover:border-purple-400 hover:text-white transition-all flex items-center justify-between shadow-md">
-                    <span>RP Rules</span>
-                    <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">15</span>
+                <!-- RP Rules Button -->
+                <a href="https://thamizhanroleplay.github.io/RP-rules/" target="_blank" class="w-full h-16 px-5 rounded-xl glass-card font-semibold text-gray-200 border-l-4 border-purple-500 hover:text-white transition-all flex items-center justify-between shadow-lg hover-lift">
+                    <span class="tracking-wide">RP Rules</span>
+                    <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-md border border-purple-500/30">15</span>
                 </a>
                 
-                <!-- Link to Gang Rules -->
-                <a href="https://thamizhanroleplay.github.io/Gang-rules/" target="_blank" class="w-full text-left px-5 py-3.5 rounded-xl glass-card font-semibold text-gray-300 border-l-4 border-blue-500 hover:border-blue-400 hover:text-white transition-all flex items-center justify-between shadow-md">
-                    <span>Gang Rules</span>
-                    <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Factions</span>
+                <!-- Gang Rules Button -->
+                <a href="https://thamizhanroleplay.github.io/Gang-rules/" target="_blank" class="w-full h-16 px-5 rounded-xl glass-card font-semibold text-gray-200 border-l-4 border-blue-500 hover:text-white transition-all flex items-center justify-between shadow-lg hover-lift">
+                    <span class="tracking-wide">Gang Rules</span>
+                    <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md border border-blue-500/30">Factions</span>
                 </a>
                 
                 <!-- Robbery Rules (Coming Soon Notification style) -->
-                <div onclick="alert('Robbery Rules are coming soon! Stay tuned.')" class="w-full text-left px-5 py-3.5 rounded-xl glass-card font-semibold text-gray-400 border-l-4 border-red-500/60 hover:border-red-500 hover:text-gray-200 transition-all flex items-center justify-between shadow-md cursor-pointer group">
-                    <span>Robbery Rules</span>
-                    <span class="text-xs bg-red-600/30 text-red-300 border border-red-500/30 px-2 py-0.5 rounded-full font-bold coming-soon-badge tracking-wider">SOON</span>
+                <div onclick="alert('Robbery Rules are coming soon! Stay tuned.')" class="w-full h-16 px-5 rounded-xl glass-card font-semibold text-gray-300 border-l-4 border-red-500/70 hover:text-gray-100 transition-all flex items-center justify-between shadow-lg hover-lift cursor-pointer group">
+                    <span class="tracking-wide">Robbery Rules</span>
+                    <span class="text-xs bg-red-600/30 text-red-300 border border-red-500/30 px-2.5 py-0.5 rounded-full font-bold coming-soon-badge tracking-widest">SOON</span>
                 </div>
             </div>
 
             <!-- RIGHT SIDE: WELCOME / LANDING INFO DISPLAY -->
             <div class="lg:col-span-3">
                 <div class="glass-card rounded-2xl p-8 sm:p-12 shadow-2xl relative overflow-hidden border border-purple-500/20 flex flex-col justify-center items-center text-center space-y-6">
-                    <div class="w-20 h-20 rounded-full bg-purple-600/20 border-2 border-purple-500 flex items-center justify-center shadow-lg shadow-purple-900/50">
-                        <span class="text-4xl">🇮🇳</span>
+                    <div class="w-24 h-24 rounded-full bg-purple-600/20 border-2 border-purple-500 flex items-center justify-center shadow-lg shadow-purple-900/50 overflow-hidden">
+                        <img src="https://images-ext-1.discordapp.net/external/F8VwnVQGTZIg3fEqs7gZS3mEht8gc2umvGB447-JZ2U/https/cdn.discordapp.com/icons/1211061571225255997/79551389075e060a8d643fb2d36d1941.webp?format=webp" alt="Thamizhan Roleplay Logo" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <h2 class="text-3xl sm:text-4xl font-black text-white tracking-wide">WELCOME TO THAMIZHAN ROLEPLAY</h2>
                         <p class="text-purple-300 font-medium mt-2 max-w-xl mx-auto">Experience the ultimate SAMP roleplay server with an immersive economy, fair moderation, 24/7 uptime, and active community features.</p>
                     </div>
                     <div class="pt-4 flex flex-wrap justify-center gap-4">
-                        <a href="YOUR_DISCORD_INVITE_URL_HERE" target="_blank" class="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold shadow-lg transition-all">
+                        <a href="https://discord.gg/vgNyX6Fkkc" target="_blank" class="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold shadow-lg transition-all">
                             Get Whitelisted
                         </a>
                     </div>
