@@ -158,22 +158,19 @@
       let finished = false;
       let audioStarted = false;
       let fallbackTimer;
-      let progressFrame;
       const loadingStartedAt = Date.now();
       const minimumLoadingTime = 18000;
       let progressDuration = minimumLoadingTime;
       const loadingBar = document.querySelector(".bar span");
-      const updateLoadingBar = (now) => {
-        const progress = Math.min(1, (now - loadingStartedAt) / progressDuration);
-        loadingBar.style.width = `${progress * 100}%`;
-        if (!finished && progress < 1) progressFrame = requestAnimationFrame(updateLoadingBar);
-      };
-      progressFrame = requestAnimationFrame(updateLoadingBar);
+      loadingBar.style.transition = "none";
+      loadingBar.style.width = "0%";
+      loadingBar.offsetWidth;
+      loadingBar.style.transition = `width ${progressDuration}ms linear`;
+      loadingBar.style.width = "100%";
       const finishLoading = () => {
         if (finished) return;
         finished = true;
         clearTimeout(fallbackTimer);
-        cancelAnimationFrame(progressFrame);
         loadingBar.style.width = "100%";
         loader.classList.add("hidden");
         site.classList.add("ready");
@@ -186,7 +183,17 @@
         if (audioStarted || finished) return;
         audioStarted = true;
         if (Number.isFinite(loadingAudio.duration) && loadingAudio.duration > 0) {
-          progressDuration = Math.max(minimumLoadingTime, loadingAudio.duration * 1000);
+          const audioDuration = Math.max(minimumLoadingTime, loadingAudio.duration * 1000);
+          if (audioDuration > progressDuration) {
+            const elapsed = Date.now() - loadingStartedAt;
+            const progress = Math.min(1, elapsed / progressDuration);
+            progressDuration = audioDuration;
+            loadingBar.style.transition = "none";
+            loadingBar.style.width = `${progress * 100}%`;
+            loadingBar.offsetWidth;
+            loadingBar.style.transition = `width ${Math.max(0, progressDuration - elapsed)}ms linear`;
+            loadingBar.style.width = "100%";
+          }
         }
         clearTimeout(fallbackTimer);
         loadingAudio.play().catch(finishAfterMinimumTime);
