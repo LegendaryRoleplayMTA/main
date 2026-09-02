@@ -81,6 +81,7 @@
     main { max-width: 1180px; margin: auto; }
     .hero { min-height: calc(100vh - 70px); display: grid; place-items: center; text-align: center; padding: 75px 22px 100px; }
     .hero-inner { max-width: 750px; }
+    .hero-logo { display: block; width: clamp(150px, 22vw, 250px); aspect-ratio: 1; margin: 0 auto 26px; object-fit: cover; border: 4px solid rgba(255,255,255,.78); border-radius: 50%; box-shadow: 0 0 0 10px rgba(255,79,207,.08), 0 18px 55px rgba(255,79,207,.3); }
     .eyebrow { color: var(--pink); text-transform: uppercase; font: 700 .7rem "DM Sans", sans-serif; letter-spacing: .24em; }
     .hero h1 { font-size: clamp(3.2rem, 8vw, 7rem); line-height: .9; margin: 18px 0; text-shadow: 0 0 35px rgba(255,79,207,.35); }
     .hero h1 span { display: block; color: var(--pink); font-size: .48em; letter-spacing: .08em; margin-top: 18px; }
@@ -104,12 +105,17 @@
     .rule-link span { color: var(--pink); font: 700 .68rem "DM Sans", sans-serif; letter-spacing: .12em; }
     .rule-link h3 { margin: 16px 0 0; font-size: 1.25rem; }
     .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .team-group { grid-column: 1 / -1; }
+    .team-group-heading { color: var(--pink); margin: 0 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font: 700 .78rem "DM Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    .team-group-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
     .team-card { padding: 18px; display: flex; align-items: center; gap: 13px; background: var(--panel); border: 1px solid var(--line); }
     .team-card img { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--pink); object-fit: cover; }
     .team-card h3 { margin: 0 0 5px; font-size: 1rem; }
     .team-card p { color: var(--muted); font: .72rem "DM Sans", sans-serif; margin: 0; }
     .status { width: 7px; height: 7px; display: inline-block; border-radius: 50%; background: #777; margin-right: 5px; }
     .status.online { background: #55e68b; }
+    .status.away { background: #f2c94c; }
+    .status.dnd { background: #ff5c68; }
     footer { border-top: 1px solid var(--line); text-align: center; padding: 35px 22px; color: var(--muted); font: .72rem "DM Sans", sans-serif; letter-spacing: .08em; }
     @media (max-width: 800px) { nav { align-items: flex-start; flex-direction: column; } .nav-links { margin-left: 0; justify-content: flex-start; } .features, .rules-grid { grid-template-columns: repeat(2, 1fr); } .hero { min-height: 80vh; padding-top: 50px; } }
     @media (max-width: 500px) { .features, .rules-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 3.5rem; } section { padding: 60px 16px; } }
@@ -120,10 +126,11 @@
     <div class="gate-content"><p>Legendary Roleplay MTA</p><h1>Your story starts here.</h1><button class="start-button" id="start">Click anywhere to start</button></div>
   </div>
   <div class="loader hidden" id="loader"><div class="loader-content"><div class="loader-logo"></div><p>Loading the city</p><div class="bar"><span></span></div></div></div>
+  <audio id="loading-audio" preload="auto"><source src="./loading-audio.mp3" type="audio/mpeg"><source src="./loading-audio.wav" type="audio/wav"><source src="./loading-audio.ogg" type="audio/ogg"></audio>
   <div class="site" id="site">
     <header><nav><a class="brand" href="#top"><span class="brand-logo"></span><span><strong>Legendary Roleplay</strong><small>MTA Community</small></span></a><div class="nav-links"><a href="https://legendaryroleplaymta.github.io/Discord_rules/">Discord Rules</a><a href="https://legendaryroleplaymta.github.io/RP-rules/">RP Rules</a><a href="https://legendaryroleplaymta.github.io/Gang-rules/">Gang Rules</a><span class="nav-disabled">Robbery Rules · Soon</span></div></nav></header>
     <main id="top">
-      <section class="hero"><div class="hero-inner"><div class="eyebrow">Namma Ooru · Namma Story · Namma RP</div><h1>Legendary Roleplay <span>MTA</span></h1><p>A living city built for players who want fair systems, serious stories, and the freedom to make their own legacy.</p><a class="button" href="#visa">Get your visa</a></div></section>
+      <section class="hero"><div class="hero-inner"><div class="eyebrow">Namma Ooru · Namma Story · Namma RP</div><img class="hero-logo" src="https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&amp;is=6a97d07d&amp;hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&amp;format=webp&amp;quality=lossless&amp;width=640&amp;height=640" alt="Legendary Roleplay logo"><h1>Legendary Roleplay <span>MTA</span></h1><p>A living city built for players who want fair systems, serious stories, and the freedom to make their own legacy.</p><a class="button" href="#visa">Get your visa</a></div></section>
       <section id="features"><div class="section-heading"><h2>Built for the long run.</h2><p>Play with purpose.</p></div><div class="features"><article class="feature"><b>24 / 7</b><h3>Uptime</h3><p>The city stays ready whenever your next chapter begins.</p></article><article class="feature"><b>01</b><h3>Fair whitelist system</h3><p>A clear process that rewards preparation and good roleplay.</p></article><article class="feature"><b>02</b><h3>Gang RP</h3><p>Build crews, rivalries, alliances, and stories worth remembering.</p></article><article class="feature"><b>03</b><h3>Classic roleplay</h3><p>Balanced systems, human moderation, and an immersive world.</p></article></div></section>
       <section id="rules"><div class="section-heading"><h2>Know the code.</h2><p>Every good story has rules.</p></div><div class="rules-grid"><a class="rule-link" href="https://legendaryroleplaymta.github.io/Discord_rules/"><span>01 / COMMUNITY</span><h3>Discord Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/RP-rules/"><span>02 / IMMERSION</span><h3>RP Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/Gang-rules/"><span>03 / FACTIONS</span><h3>Gang Rules</h3></a><div class="rule-link disabled" aria-disabled="true"><span>04 / CRIME</span><h3>Robbery Rules</h3><p style="color:var(--pink); margin:12px 0 0; font:700 .72rem Arial, sans-serif; text-transform:uppercase;">Coming soon</p></div></div></section>
       <section id="team"><div class="section-heading"><h2>The team behind the server.</h2><p>Live staff directory from Discord.</p></div><div class="team-grid" id="team-grid"><p class="muted">Loading team profiles...</p></div></section>
@@ -137,21 +144,80 @@
     const gate = document.getElementById("gate");
     const loader = document.getElementById("loader");
     const site = document.getElementById("site");
+    const loadingAudio = document.getElementById("loading-audio");
     function enterSite() {
       if (gate.classList.contains("hidden")) return;
-      gate.classList.add("hidden"); loader.classList.remove("hidden");
-      setTimeout(() => { loader.classList.add("hidden"); site.classList.add("ready"); }, 1800);
+      gate.classList.add("hidden");
+      loader.classList.remove("hidden");
+
+      let finished = false;
+      let audioStarted = false;
+      let fallbackTimer;
+      const finishLoading = () => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(fallbackTimer);
+        loader.classList.add("hidden");
+        site.classList.add("ready");
+      };
+      const startAudio = () => {
+        if (audioStarted || finished) return;
+        audioStarted = true;
+        clearTimeout(fallbackTimer);
+        loadingAudio.play().catch(finishLoading);
+      };
+      loadingAudio.addEventListener("ended", finishLoading, { once: true });
+      loadingAudio.addEventListener("error", finishLoading, { once: true });
+      loadingAudio.addEventListener("canplaythrough", startAudio, { once: true });
+      loadingAudio.load();
+      fallbackTimer = setTimeout(finishLoading, 700);
     }
     gate.addEventListener("click", enterSite);
     document.addEventListener("keydown", enterSite, { once: true });
     function renderTeam(data) {
-      const grid = document.getElementById("team-grid"); grid.innerHTML = "";
-      Object.entries(data).forEach(([category, members]) => members.forEach(member => {
-        const card = document.createElement("article"); card.className = "team-card";
-        const avatar = member.avatar || "./logo.png";
-        card.innerHTML = `<img src="${avatar}" alt=""><div><h3>${member.name}</h3><p>${category} · <span class="status ${member.status === "online" ? "online" : ""}"></span>${member.status}</p></div>`;
-        grid.appendChild(card);
-      }));
+      const grid = document.getElementById("team-grid");
+      const roles = Array.isArray(data.roles)
+        ? data.roles.map(role => [role.heading, role.members])
+        : Object.entries(data);
+      const fallbackAvatar = "https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&is=6a97d07d&hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&format=webp&quality=lossless&width=640&height=640";
+
+      grid.innerHTML = "";
+      roles.forEach(([category, members]) => {
+        if (!(members || []).length) return;
+        const group = document.createElement("section");
+        group.className = "team-group";
+        const heading = document.createElement("h3");
+        heading.className = "team-group-heading";
+        heading.textContent = category;
+        const groupGrid = document.createElement("div");
+        groupGrid.className = "team-group-grid";
+        group.append(heading, groupGrid);
+
+        members.forEach(member => {
+          const card = document.createElement("article");
+          card.className = "team-card";
+          const avatar = document.createElement("img");
+          avatar.src = member.avatar || fallbackAvatar;
+          avatar.alt = `${member.displayName || member.name || member.username || "Team member"} avatar`;
+          avatar.addEventListener("error", () => { avatar.src = fallbackAvatar; }, { once: true });
+
+          const details = document.createElement("div");
+          const name = document.createElement("h3");
+          name.textContent = member.displayName || member.name || member.username || "Team member";
+          const meta = document.createElement("p");
+          const status = String(member.status || "offline").toLowerCase();
+          const statusClass = status === "online" ? "online" : status === "idle" || status === "away" ? "away" : status === "dnd" ? "dnd" : "";
+          meta.append(document.createTextNode(`${category} · `));
+          const statusDot = document.createElement("span");
+          statusDot.className = `status ${statusClass}`;
+          statusDot.setAttribute("aria-label", status);
+          meta.append(statusDot, document.createTextNode(status));
+          details.append(name, meta);
+          card.append(avatar, details);
+          groupGrid.appendChild(card);
+        });
+        grid.appendChild(group);
+      });
       if (!grid.children.length) grid.innerHTML = "<p>No team profiles are available yet.</p>";
     }
     fetch(`${API_BASE_URL}/api/team`).then(response => response.ok ? response.json() : Promise.reject()).then(renderTeam).catch(() => {
