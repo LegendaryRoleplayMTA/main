@@ -70,8 +70,7 @@
     @keyframes title-enter { from { opacity: 0; transform: translateX(90px); } to { opacity: 1; transform: none; } }
     @keyframes description-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
     .bar { width: min(330px, 75vw); height: 5px; margin: 22px auto 0; background: rgba(255,255,255,.14); overflow: hidden; }
-    .bar span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--purple), var(--pink)); animation: load 1.7s ease forwards; }
-    @keyframes load { to { width: 100%; } }
+    .bar span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--purple), var(--pink)); transition: width .08s linear; }
     .site { opacity: 0; transform: translateY(12px); transition: opacity .8s ease, transform .8s ease; }
     .site.ready { opacity: 1; transform: none; }
     header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(15, 7, 27, .54); backdrop-filter: blur(10px); }
@@ -138,7 +137,7 @@
     <main id="top">
       <section class="hero"><div class="hero-inner"><div class="eyebrow">Namma Ooru · Namma Story · Namma RP</div><img class="hero-logo" src="https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&amp;is=6a97d07d&amp;hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&amp;format=webp&amp;quality=lossless&amp;width=640&amp;height=640" alt="Legendary Roleplay logo"><h1>Legendary Roleplay <span>MTA</span></h1><p>A living city built for players who want fair systems, serious stories, and the freedom to make their own legacy.</p><a class="button" href="#visa">Get your visa</a></div></section>
       <section id="features"><div class="section-heading"><h2>Built for the long run.</h2><p>Play with purpose.</p></div><div class="features"><article class="feature"><b>24 / 7</b><h3>Uptime</h3><p>The city stays ready whenever your next chapter begins.</p></article><article class="feature"><b>01</b><h3>Fair whitelist system</h3><p>A clear process that rewards preparation and good roleplay.</p></article><article class="feature"><b>02</b><h3>Gang RP</h3><p>Build crews, rivalries, alliances, and stories worth remembering.</p></article><article class="feature"><b>03</b><h3>Classic roleplay</h3><p>Balanced systems, human moderation, and an immersive world.</p></article></div></section>
-      <section id="rules"><div class="section-heading"><h2>Know the code.</h2><p>Every good story has rules.</p></div><div class="rules-grid"><a class="rule-link" href="https://legendaryroleplaymta.github.io/Discord_rules/"><span>01 / COMMUNITY</span><h3>Discord Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/RP-rules/"><span>02 / IMMERSION</span><h3>RP Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/Gang-rules/"><span>03 / FACTIONS</span><h3>Gang Rules</h3></a><div class="rule-link disabled" aria-disabled="true"><span>04 / CRIME</span><h3>Robbery Rules</h3><p style="color:var(--pink); margin:12px 0 0; font:700 .72rem Arial, sans-serif; text-transform:uppercase;">Coming soon</p></div></div></section>
+      <section id="rules"><div class="section-heading"><h2>Read rules By Clicking below.</h2><p>Every good story has rules.</p></div><div class="rules-grid"><a class="rule-link" href="https://legendaryroleplaymta.github.io/Discord_rules/"><span>01 / COMMUNITY</span><h3>Discord Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/RP-rules/"><span>02 / IMMERSION</span><h3>RP Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/Gang-rules/"><span>03 / FACTIONS</span><h3>Gang Rules</h3></a><div class="rule-link disabled" aria-disabled="true"><span>04 / CRIME</span><h3>Robbery Rules</h3><p style="color:var(--pink); margin:12px 0 0; font:700 .72rem Arial, sans-serif; text-transform:uppercase;">Coming soon</p></div></div></section>
       <section id="team"><div class="section-heading"><h2>The team behind the server.</h2><p>Live staff directory from Discord.</p></div><div class="team-grid" id="team-grid"><p class="muted">Loading team profiles...</p></div></section>
       <section id="visa" style="text-align:center"><div class="eyebrow">Your next chapter</div><h2>Ready to enter the city?</h2><p style="color:var(--muted)">Apply through Discord and take your place in Legendary Roleplay.</p><a class="button" href="https://discord.gg/SbNU8h5P68" target="_blank" rel="noreferrer">Get visa on Discord</a></section>
     </main>
@@ -159,12 +158,23 @@
       let finished = false;
       let audioStarted = false;
       let fallbackTimer;
+      let progressFrame;
       const loadingStartedAt = Date.now();
       const minimumLoadingTime = 18000;
+      let progressDuration = minimumLoadingTime;
+      const loadingBar = document.querySelector(".bar span");
+      const updateLoadingBar = (now) => {
+        const progress = Math.min(1, (now - loadingStartedAt) / progressDuration);
+        loadingBar.style.width = `${progress * 100}%`;
+        if (!finished && progress < 1) progressFrame = requestAnimationFrame(updateLoadingBar);
+      };
+      progressFrame = requestAnimationFrame(updateLoadingBar);
       const finishLoading = () => {
         if (finished) return;
         finished = true;
         clearTimeout(fallbackTimer);
+        cancelAnimationFrame(progressFrame);
+        loadingBar.style.width = "100%";
         loader.classList.add("hidden");
         site.classList.add("ready");
       };
@@ -175,6 +185,9 @@
       const startAudio = () => {
         if (audioStarted || finished) return;
         audioStarted = true;
+        if (Number.isFinite(loadingAudio.duration) && loadingAudio.duration > 0) {
+          progressDuration = Math.max(minimumLoadingTime, loadingAudio.duration * 1000);
+        }
         clearTimeout(fallbackTimer);
         loadingAudio.play().catch(finishAfterMinimumTime);
       };
