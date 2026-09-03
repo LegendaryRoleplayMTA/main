@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#160d2d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff4fcf'/%3E%3Cstop offset='100%25' stop-color='%239b5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23130a22'/%3E%3Ccircle cx='32' cy='32' r='22' fill='url(%23g)' opacity='0.9'/%3E%3Cpath d='M20 39 L32 18 L44 39 Z' fill='%23fff' opacity='0.95'/%3E%3Cpath d='M22 41 H42 L40 48 H24 Z' fill='%23fff' opacity='0.9'/%3E%3C/svg%3E">
   <title>Legendary Roleplay MTA</title>
   <meta name="description" content="Legendary Roleplay MTA - your story, your choices, your legacy.">
   <meta property="og:type" content="website">
@@ -131,7 +132,6 @@
     <div class="gate-content"><p>Legendary Roleplay MTA</p><h1>Your story starts here.</h1><button class="start-button" id="start">Click anywhere to start</button></div>
   </div>
   <div class="loader hidden" id="loader"><div class="loader-content"><div class="loader-logo" role="img" aria-label="Legendary Roleplay logo"></div><h2 class="loader-title">Welcome to Legendary Roleplay</h2><p class="loader-description"><strong>Legendary Roleplay</strong> — Experience immersive MTA:SA roleplay with realistic jobs, businesses, gangs, police, and a unique community. Create your character, build your story, and become a legend. <strong>Your Life. Your Story. Your Legend.</strong></p><p>Loading the city</p><div class="bar"><span></span></div></div></div>
-  <audio id="loading-audio" preload="auto"><source src="./loading-audio.mp3" type="audio/mpeg"><source src="./loading-audio.wav" type="audio/wav"><source src="./loading-audio.ogg" type="audio/ogg"></audio>
   <div class="site" id="site">
     <header><nav><a class="brand" href="#top"><span class="brand-logo"></span><span><strong>Legendary Roleplay</strong><small>MTA Community</small></span></a><div class="nav-links"><a href="https://legendaryroleplaymta.github.io/Discord_rules/">Discord Rules</a><a href="https://legendaryroleplaymta.github.io/RP-rules/">RP Rules</a><a href="https://legendaryroleplaymta.github.io/Gang-rules/">Gang Rules</a><span class="nav-disabled">Robbery Rules · Soon</span></div></nav></header>
     <main id="top">
@@ -144,65 +144,42 @@
     <footer>LEGENDARY ROLEPLAY MTA · BUILT FOR STORIES THAT LAST</footer>
   </div>
   <script>
-    // Set this to the public URL of the bot service hosting /api/team.
-    const API_BASE_URL = "https://thamizhan-roleplay.onrender.com";
+    // This site is static and may be hosted on GitHub Pages or similar.
+    // The Discord team feed is optional; if the API is unavailable, the page
+    // should keep working without showing broken network errors.
+    const API_BASE_URL = "";
     const gate = document.getElementById("gate");
     const loader = document.getElementById("loader");
     const site = document.getElementById("site");
-    const loadingAudio = document.getElementById("loading-audio");
     function enterSite() {
       if (gate.classList.contains("hidden")) return;
       gate.classList.add("hidden");
       loader.classList.remove("hidden");
 
       let finished = false;
-      let audioStarted = false;
-      let fallbackTimer;
       const loadingStartedAt = Date.now();
-      const minimumLoadingTime = 18000;
-      let progressDuration = minimumLoadingTime;
+      const minimumLoadingTime = 9000;
       const loadingBar = document.querySelector(".bar span");
       loadingBar.style.transition = "none";
       loadingBar.style.width = "0%";
       loadingBar.offsetWidth;
-      loadingBar.style.transition = `width ${progressDuration}ms linear`;
+      loadingBar.style.transition = `width ${minimumLoadingTime}ms linear`;
       loadingBar.style.width = "100%";
+
       const finishLoading = () => {
         if (finished) return;
         finished = true;
-        clearTimeout(fallbackTimer);
         loadingBar.style.width = "100%";
         loader.classList.add("hidden");
         site.classList.add("ready");
       };
+
       const finishAfterMinimumTime = () => {
         const remaining = Math.max(0, minimumLoadingTime - (Date.now() - loadingStartedAt));
         setTimeout(finishLoading, remaining);
       };
-      const startAudio = () => {
-        if (audioStarted || finished) return;
-        audioStarted = true;
-        if (Number.isFinite(loadingAudio.duration) && loadingAudio.duration > 0) {
-          const audioDuration = Math.max(minimumLoadingTime, loadingAudio.duration * 1000);
-          if (audioDuration > progressDuration) {
-            const elapsed = Date.now() - loadingStartedAt;
-            const progress = Math.min(1, elapsed / progressDuration);
-            progressDuration = audioDuration;
-            loadingBar.style.transition = "none";
-            loadingBar.style.width = `${progress * 100}%`;
-            loadingBar.offsetWidth;
-            loadingBar.style.transition = `width ${Math.max(0, progressDuration - elapsed)}ms linear`;
-            loadingBar.style.width = "100%";
-          }
-        }
-        clearTimeout(fallbackTimer);
-        loadingAudio.play().catch(finishAfterMinimumTime);
-      };
-      loadingAudio.addEventListener("ended", finishAfterMinimumTime, { once: true });
-      loadingAudio.addEventListener("error", finishAfterMinimumTime, { once: true });
-      loadingAudio.addEventListener("canplaythrough", startAudio, { once: true });
-      loadingAudio.load();
-      fallbackTimer = setTimeout(finishAfterMinimumTime, 700);
+
+      finishAfterMinimumTime();
     }
     gate.addEventListener("click", enterSite);
     document.addEventListener("keydown", enterSite, { once: true });
@@ -252,9 +229,13 @@
       });
       if (!grid.children.length) grid.innerHTML = "<p>No team profiles are available yet.</p>";
     }
-    fetch(`${API_BASE_URL}/api/team`).then(response => response.ok ? response.json() : Promise.reject()).then(renderTeam).catch(() => {
+    if (!API_BASE_URL) {
       document.getElementById("team-grid").innerHTML = "<p>Team profiles will appear when the Discord API is connected.</p>";
-    });
+    } else {
+      fetch(`${API_BASE_URL}/api/team`).then(response => response.ok ? response.json() : Promise.reject()).then(renderTeam).catch(() => {
+        document.getElementById("team-grid").innerHTML = "<p>Team profiles will appear when the Discord API is connected.</p>";
+      });
+    }
   </script>
 </body>
 </html>
