@@ -1,23 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#160d2d">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff4fcf'/%3E%3Cstop offset='100%25' stop-color='%239b5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23130a22'/%3E%3Ccircle cx='32' cy='32' r='22' fill='url(%23g)' opacity='0.9'/%3E%3Cpath d='M20 39 L32 18 L44 39 Z' fill='%23fff' opacity='0.95'/%3E%3Cpath d='M22 41 H42 L40 48 H24 Z' fill='%23fff' opacity='0.9'/%3E%3C/svg%3E">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff4fcf'/%3E%3Cstop offset='100%25' stop-color='%239b5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23130a22'/%3E%3Ccircle cx='32' cy='32' r='22' fill='url(%23g)' opacity='0.9'/%3E%3Cpath d='M20 39 L32 18 L44 39 Z' fill='%23fff' opacity='0.95'/%3E%3Cpath d='M22 41 H42 L40 48 H24 Z' fill='%23fff' opacity='0.9'/%3E%3C/svg%3E">
   <title>Legendary Roleplay MTA</title>
   <meta name="description" content="Legendary Roleplay MTA - your story, your choices, your legacy.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Legendary Roleplay MTA">
-  <meta property="og:description" content="A living city built for fair systems, serious stories, and classic roleplay.">
-  <meta property="og:image" content="https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&amp;is=6a97d07d&amp;hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&amp;format=webp&amp;quality=lossless&amp;width=640&amp;height=640">
+  <meta property="og:description"
+    content="A living city built for fair systems, serious stories, and classic roleplay.">
+  <meta property="og:image"
+    content="https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&amp;is=6a97d07d&amp;hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&amp;format=webp&amp;quality=lossless&amp;width=640&amp;height=640">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Legendary Roleplay MTA">
   <meta name="twitter:description" content="Your story starts here.">
-  <meta name="twitter:image" content="https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&amp;is=6a97d07d&amp;hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&amp;format=webp&amp;quality=lossless&amp;width=640&amp;height=640">
+  <meta name="twitter:image"
+    content="https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&amp;is=6a97d07d&amp;hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&amp;format=webp&amp;quality=lossless&amp;width=640&amp;height=640">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --ink: #f8efff;
@@ -28,10 +35,17 @@
       --panel: rgba(27, 14, 49, .46);
       --line: rgba(255, 133, 234, .28);
       --background-image: url("https://www.cnet.com/wp-content/uploads/sites/2/25b429ea-cbf2-11e2-9a4a-0291187b029a.jpg?resize=768,432");
-      --logo-image: url("https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&is=6a97d07d&hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&format=webp&quality=lossless&width=640&height=640");
+      --logo-image: url("logo.png");
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       color: var(--ink);
@@ -39,6 +53,7 @@
       font-family: "DM Sans", sans-serif;
       min-height: 100vh;
     }
+
     body::before {
       content: "";
       position: fixed;
@@ -46,100 +61,642 @@
       z-index: -1;
       background: linear-gradient(135deg, rgba(17, 8, 31, .93), rgba(66, 14, 76, .72) 48%, rgba(10, 7, 23, .94));
     }
-    button, a { font: inherit; }
-    a { color: inherit; text-decoration: none; }
-    .gate, .loader {
-      position: fixed; inset: 0; z-index: 20; display: grid; place-items: center;
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .gate,
+    .loader {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: grid;
+      place-items: center;
       background-image: linear-gradient(rgba(16, 7, 29, .58), rgba(16, 7, 29, .7)), var(--background-image);
       background-position: center;
       background-size: cover;
       transition: opacity .7s ease, visibility .7s ease;
     }
-    .gate.hidden, .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    .gate-content, .loader-content { text-align: center; padding: 28px; }
-    .gate h1, h1, h2, h3 { font-family: "Space Grotesk", sans-serif; }
-    .gate h1 { font-size: clamp(2.5rem, 8vw, 6rem); margin: 0 0 10px; letter-spacing: 0; }
-    .gate p, .loader p { color: var(--muted); letter-spacing: .16em; text-transform: uppercase; font: 600 .72rem "DM Sans", sans-serif; }
-    .start-button { border: 1px solid var(--pink); background: transparent; color: var(--ink); padding: 15px 25px; cursor: pointer; text-transform: uppercase; letter-spacing: .18em; font: 700 .75rem "DM Sans", sans-serif; }
-    .start-button:hover { background: var(--pink); color: #1b0821; }
-    .loader-logo, .brand-logo { background: var(--logo-image) center/contain no-repeat; }
-    .loader-logo { width: min(340px, 72vw); height: min(180px, 38vw); margin: 0 auto 22px; filter: drop-shadow(0 14px 28px rgba(255,79,207,.3)); animation: logo-enter 1.2s cubic-bezier(.2,.8,.2,1) both; }
-    .loader-title { margin: 0; font: 700 clamp(1.8rem, 5vw, 3.8rem)/.95 "Space Grotesk", sans-serif; animation: title-enter 1s .25s cubic-bezier(.2,.8,.2,1) both; }
-    .loader-description { max-width: 650px; margin: 18px auto 0; color: var(--muted); font-size: clamp(.9rem, 1.8vw, 1.08rem); line-height: 1.65; animation: description-enter 1s .55s ease both; }
-    .loader-description strong { color: var(--ink); }
-    @keyframes logo-enter { from { opacity: 0; transform: translateX(-90px) scale(.8); } to { opacity: 1; transform: none; } }
-    @keyframes title-enter { from { opacity: 0; transform: translateX(90px); } to { opacity: 1; transform: none; } }
-    @keyframes description-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-    .bar { width: min(330px, 75vw); height: 5px; margin: 22px auto 0; background: rgba(255,255,255,.14); overflow: hidden; }
-    .bar span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--purple), var(--pink)); transition: width .08s linear; }
-    .site { opacity: 0; transform: translateY(12px); transition: opacity .8s ease, transform .8s ease; }
-    .site.ready { opacity: 1; transform: none; }
-    header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(15, 7, 27, .54); backdrop-filter: blur(10px); }
-    nav { max-width: 1180px; margin: auto; padding: 13px 22px; display: flex; align-items: center; gap: 22px; }
-    .brand { display: flex; align-items: center; gap: 11px; min-width: max-content; }
-    .brand-logo { width: 52px; height: 42px; }
-    .brand strong { display: block; font: 700 1rem "Space Grotesk", sans-serif; }
-    .brand small { display: block; color: var(--pink); font: 700 .58rem "DM Sans", sans-serif; letter-spacing: .15em; }
-    .nav-links { margin-left: auto; display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
-    .nav-links a, .nav-disabled { padding: 9px 10px; color: var(--muted); font: 700 .68rem "DM Sans", sans-serif; text-transform: uppercase; letter-spacing: .06em; }
-    .nav-disabled { cursor: default; opacity: .62; }
-    .nav-links a:hover, .nav-links a.active { color: white; background: rgba(255,79,207,.1); }
-    main { max-width: 1180px; margin: auto; }
-    .hero { min-height: calc(100vh - 70px); display: grid; place-items: center; text-align: center; padding: 75px 22px 100px; }
-    .hero-inner { max-width: 750px; }
-    .hero-logo { display: block; width: clamp(150px, 22vw, 250px); aspect-ratio: 1; margin: 0 auto 26px; object-fit: cover; border: 4px solid rgba(255,255,255,.78); border-radius: 50%; box-shadow: 0 0 0 10px rgba(255,79,207,.08), 0 18px 55px rgba(255,79,207,.3); }
-    .eyebrow { color: var(--pink); text-transform: uppercase; font: 700 .7rem "DM Sans", sans-serif; letter-spacing: .24em; }
-    .hero h1 { font-size: clamp(3.2rem, 8vw, 7rem); line-height: .9; margin: 18px 0; text-shadow: 0 0 35px rgba(255,79,207,.35); }
-    .hero h1 span { display: block; color: var(--pink); font-size: .48em; letter-spacing: .08em; margin-top: 18px; }
-    .hero p { color: var(--muted); font-size: 1.1rem; line-height: 1.7; max-width: 570px; margin: 0 auto 30px; }
-    .button { display: inline-block; padding: 14px 25px; background: linear-gradient(100deg, var(--purple), var(--pink)); color: white; font: 800 .74rem Arial, sans-serif; text-transform: uppercase; letter-spacing: .12em; border: 0; cursor: pointer; box-shadow: 0 10px 34px rgba(188, 58, 207, .25); }
-    .button:hover { transform: translateY(-2px); }
-    section { padding: 80px 22px; }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 28px; }
-    h2 { font-size: clamp(2rem, 4vw, 3.3rem); margin: 0; }
-    .section-heading p { color: var(--muted); margin: 0; }
-    .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .feature { padding: 24px 18px; min-height: 160px; background: var(--panel); border: 1px solid var(--line); border-top: 2px solid var(--pink); }
-    .feature b { display: block; color: var(--pink); font: 800 1.8rem "Space Grotesk", sans-serif; margin-bottom: 17px; }
-    .feature h3 { margin: 0 0 8px; font-size: 1.15rem; }
-    .feature p { color: var(--muted); line-height: 1.5; margin: 0; font-size: .95rem; }
-    .rules-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .rule-link { padding: 24px 18px; min-height: 130px; background: rgba(28, 13, 48, .38); border: 1px solid var(--line); backdrop-filter: blur(5px); transition: .2s ease; }
-    .rule-link:hover { border-color: var(--pink); background: rgba(55, 19, 70, .52); transform: translateY(-3px); }
-    .rule-link.disabled { cursor: default; opacity: .72; }
-    .rule-link.disabled:hover { border-color: var(--line); background: rgba(28, 13, 48, .38); transform: none; }
-    .rule-link span { color: var(--pink); font: 700 .68rem "DM Sans", sans-serif; letter-spacing: .12em; }
-    .rule-link h3 { margin: 16px 0 0; font-size: 1.25rem; }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-    .team-group { grid-column: 1 / -1; }
-    .team-group-heading { color: var(--pink); margin: 0 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font: 700 .78rem "DM Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
-    .team-group-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-    .team-card { padding: 18px; display: flex; align-items: center; gap: 13px; background: var(--panel); border: 1px solid var(--line); }
-    .team-card img { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--pink); object-fit: cover; }
-    .team-card h3 { margin: 0 0 5px; font-size: 1rem; }
-    .team-card p { color: var(--muted); font: .72rem "DM Sans", sans-serif; margin: 0; }
-    .status { width: 7px; height: 7px; display: inline-block; border-radius: 50%; background: #777; margin-right: 5px; }
-    .status.online { background: #55e68b; }
-    .status.away { background: #f2c94c; }
-    .status.dnd { background: #ff5c68; }
-    footer { border-top: 1px solid var(--line); text-align: center; padding: 35px 22px; color: var(--muted); font: .72rem "DM Sans", sans-serif; letter-spacing: .08em; }
-    @media (max-width: 800px) { nav { align-items: flex-start; flex-direction: column; } .nav-links { margin-left: 0; justify-content: flex-start; } .features, .rules-grid { grid-template-columns: repeat(2, 1fr); } .hero { min-height: 80vh; padding-top: 50px; } }
-    @media (max-width: 500px) { .features, .rules-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 3.5rem; } section { padding: 60px 16px; } }
+
+    .gate.hidden,
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .gate-content,
+    .loader-content {
+      text-align: center;
+      padding: 28px;
+    }
+
+    .gate h1,
+    h1,
+    h2,
+    h3 {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .gate h1 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      margin: 0 0 10px;
+      letter-spacing: 0;
+    }
+
+    .gate p,
+    .loader p {
+      color: var(--muted);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font: 600 .72rem "DM Sans", sans-serif;
+    }
+
+    .start-button {
+      border: 1px solid var(--pink);
+      background: transparent;
+      color: var(--ink);
+      padding: 15px 25px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font: 700 .75rem "DM Sans", sans-serif;
+    }
+
+    .start-button:hover {
+      background: var(--pink);
+      color: #1b0821;
+    }
+
+    .loader-logo,
+    .brand-logo {
+      background: var(--logo-image) center/contain no-repeat;
+    }
+
+    .loader-logo {
+      width: min(340px, 72vw);
+      height: min(180px, 38vw);
+      margin: 0 auto 22px;
+      filter: drop-shadow(0 14px 28px rgba(255, 79, 207, .3));
+      animation: logo-enter 1.2s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .loader-title {
+      margin: 0;
+      font: 700 clamp(1.8rem, 5vw, 3.8rem)/.95 "Space Grotesk", sans-serif;
+      animation: title-enter 1s .25s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .loader-description {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: clamp(.9rem, 1.8vw, 1.08rem);
+      line-height: 1.65;
+      animation: description-enter 1s .55s ease both;
+    }
+
+    .loader-description strong {
+      color: var(--ink);
+    }
+
+    @keyframes logo-enter {
+      from {
+        opacity: 0;
+        transform: translateX(-90px) scale(.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes title-enter {
+      from {
+        opacity: 0;
+        transform: translateX(90px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes description-enter {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .bar {
+      width: min(330px, 75vw);
+      height: 5px;
+      margin: 22px auto 0;
+      background: rgba(255, 255, 255, .14);
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      transition: width .08s linear;
+    }
+
+    .site {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .site.ready {
+      opacity: 1;
+      transform: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 7, 27, .54);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 13px 22px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: max-content;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 42px;
+    }
+
+    .brand strong {
+      display: block;
+      font: 700 1rem "Space Grotesk", sans-serif;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--pink);
+      font: 700 .58rem "DM Sans", sans-serif;
+      letter-spacing: .15em;
+    }
+
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a,
+    .nav-disabled {
+      padding: 9px 10px;
+      color: var(--muted);
+      font: 700 .68rem "DM Sans", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .nav-disabled {
+      cursor: default;
+      opacity: .62;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: white;
+      background: rgba(255, 79, 207, .1);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 75px 22px 100px;
+    }
+
+    .hero-inner {
+      max-width: 750px;
+    }
+
+    .hero-logo {
+      display: block;
+      width: clamp(150px, 22vw, 250px);
+      aspect-ratio: 1;
+      margin: 0 auto 26px;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, .78);
+      border-radius: 50%;
+      box-shadow: 0 0 0 10px rgba(255, 79, 207, .08), 0 18px 55px rgba(255, 79, 207, .3);
+    }
+
+    .eyebrow {
+      color: var(--pink);
+      text-transform: uppercase;
+      font: 700 .7rem "DM Sans", sans-serif;
+      letter-spacing: .24em;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      line-height: .9;
+      margin: 18px 0;
+      text-shadow: 0 0 35px rgba(255, 79, 207, .35);
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--pink);
+      font-size: .48em;
+      letter-spacing: .08em;
+      margin-top: 18px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 570px;
+      margin: 0 auto 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      background: linear-gradient(100deg, var(--purple), var(--pink));
+      color: white;
+      font: 800 .74rem Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 10px 34px rgba(188, 58, 207, .25);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 80px 22px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      margin: 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .feature {
+      padding: 24px 18px;
+      min-height: 160px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-top: 2px solid var(--pink);
+    }
+
+    .feature b {
+      display: block;
+      color: var(--pink);
+      font: 800 1.8rem "Space Grotesk", sans-serif;
+      margin-bottom: 17px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .feature p {
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+      font-size: .95rem;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .rule-link {
+      padding: 24px 18px;
+      min-height: 130px;
+      background: rgba(28, 13, 48, .38);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(5px);
+      transition: .2s ease;
+    }
+
+    .rule-link:hover {
+      border-color: var(--pink);
+      background: rgba(55, 19, 70, .52);
+      transform: translateY(-3px);
+    }
+
+    .rule-link.disabled {
+      cursor: default;
+      opacity: .72;
+    }
+
+    .rule-link.disabled:hover {
+      border-color: var(--line);
+      background: rgba(28, 13, 48, .38);
+      transform: none;
+    }
+
+    .rule-link span {
+      color: var(--pink);
+      font: 700 .68rem "DM Sans", sans-serif;
+      letter-spacing: .12em;
+    }
+
+    .rule-link h3 {
+      margin: 16px 0 0;
+      font-size: 1.25rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .team-group {
+      grid-column: 1 / -1;
+    }
+
+    .team-group-heading {
+      color: var(--pink);
+      margin: 0 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      font: 700 .78rem "DM Sans", sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .team-group-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .team-card {
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .team-card img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--pink);
+      object-fit: cover;
+    }
+
+    .team-card h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .team-card p {
+      color: var(--muted);
+      font: .72rem "DM Sans", sans-serif;
+      margin: 0;
+    }
+
+    .status {
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #777;
+      margin-right: 5px;
+    }
+
+    .status.online {
+      background: #55e68b;
+    }
+
+    .status.away {
+      background: #f2c94c;
+    }
+
+    .status.dnd {
+      background: #ff5c68;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 35px 22px;
+      color: var(--muted);
+      font: .72rem "DM Sans", sans-serif;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        margin-left: 0;
+        justify-content: flex-start;
+      }
+
+      .features,
+      .rules-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding-top: 50px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .features,
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      section {
+        padding: 60px 16px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="gate" id="gate" role="dialog" aria-label="Enter Legendary Roleplay">
-    <div class="gate-content"><p>Legendary Roleplay MTA</p><h1>Your story starts here.</h1><button class="start-button" id="start">Click anywhere to start</button></div>
+    <div class="gate-content">
+      <p>Legendary Roleplay MTA</p>
+      <h1>Your story starts here.</h1><button class="start-button" id="start">Click anywhere to start</button>
+    </div>
   </div>
-  <div class="loader hidden" id="loader"><div class="loader-content"><div class="loader-logo" role="img" aria-label="Legendary Roleplay logo"></div><h2 class="loader-title">Welcome to Legendary Roleplay</h2><p class="loader-description"><strong>Legendary Roleplay</strong> — Experience immersive MTA:SA roleplay with realistic jobs, businesses, gangs, police, and a unique community. Create your character, build your story, and become a legend. <strong>Your Life. Your Story. Your Legend.</strong></p><p>Loading the city</p><div class="bar"><span></span></div></div></div>
+  <audio id="intro-audio" src="intro.mp3" preload="auto" loop></audio>
+  <div class="loader hidden" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo" role="img" aria-label="Legendary Roleplay logo"></div>
+      <h2 class="loader-title">Welcome to Legendary Roleplay</h2>
+      <p class="loader-description"><strong>Legendary Roleplay</strong> — Experience immersive MTA:SA roleplay with
+        realistic jobs, businesses, gangs, police, and a unique community. Create your character, build your story, and
+        become a legend. <strong>Your Life. Your Story. Your Legend.</strong></p>
+      <p>Loading the city</p>
+      <div class="bar"><span></span></div>
+    </div>
+  </div>
   <div class="site" id="site">
-    <header><nav><a class="brand" href="#top"><span class="brand-logo"></span><span><strong>Legendary Roleplay</strong><small>MTA Community</small></span></a><div class="nav-links"><a href="https://legendaryroleplaymta.github.io/Discord_rules/">Discord Rules</a><a href="https://legendaryroleplaymta.github.io/RP-rules/">RP Rules</a><a href="https://legendaryroleplaymta.github.io/Gang-rules/">Gang Rules</a><span class="nav-disabled">Robbery Rules · Soon</span></div></nav></header>
+    <header>
+      <nav><a class="brand" href="#top"><span class="brand-logo"></span><span><strong>Legendary
+              Roleplay</strong><small>MTA Community</small></span></a>
+        <div class="nav-links"><a href="https://legendaryroleplaymta.github.io/Discord_rules/">Discord Rules</a><a
+            href="https://legendaryroleplaymta.github.io/RP-rules/">RP Rules</a><a
+            href="https://legendaryroleplaymta.github.io/Gang-rules/">Gang Rules</a><span class="nav-disabled">Robbery
+            Rules · Soon</span></div>
+      </nav>
+    </header>
     <main id="top">
-      <section class="hero"><div class="hero-inner"><div class="eyebrow">Namma Ooru · Namma Story · Namma RP</div><img class="hero-logo" src="https://media.discordapp.net/attachments/1152526463627690012/1323734946379988992/1735200488179.png?ex=6a9921fd&amp;is=6a97d07d&amp;hm=46050f9d46cb8921448429a995f65981dd1ea3aa094b6de1430b6b794a9afa96&amp;format=webp&amp;quality=lossless&amp;width=640&amp;height=640" alt="Legendary Roleplay logo"><h1>Legendary Roleplay <span>MTA</span></h1><p>A living city built for players who want fair systems, serious stories, and the freedom to make their own legacy.</p><a class="button" href="#visa">Get your visa</a></div></section>
-      <section id="features"><div class="section-heading"><h2>Built for the long run.</h2><p>Play with purpose.</p></div><div class="features"><article class="feature"><b>24 / 7</b><h3>Uptime</h3><p>The city stays ready whenever your next chapter begins.</p></article><article class="feature"><b>01</b><h3>Fair whitelist system</h3><p>A clear process that rewards preparation and good roleplay.</p></article><article class="feature"><b>02</b><h3>Gang RP</h3><p>Build crews, rivalries, alliances, and stories worth remembering.</p></article><article class="feature"><b>03</b><h3>Classic roleplay</h3><p>Balanced systems, human moderation, and an immersive world.</p></article></div></section>
-      <section id="rules"><div class="section-heading"><h2>Read rules By Clicking below.</h2><p>Every good story has rules.</p></div><div class="rules-grid"><a class="rule-link" href="https://legendaryroleplaymta.github.io/Discord_rules/"><span>01 / COMMUNITY</span><h3>Discord Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/RP-rules/"><span>02 / IMMERSION</span><h3>RP Rules</h3></a><a class="rule-link" href="https://legendaryroleplaymta.github.io/Gang-rules/"><span>03 / FACTIONS</span><h3>Gang Rules</h3></a><div class="rule-link disabled" aria-disabled="true"><span>04 / CRIME</span><h3>Robbery Rules</h3><p style="color:var(--pink); margin:12px 0 0; font:700 .72rem Arial, sans-serif; text-transform:uppercase;">Coming soon</p></div></div></section>
-      <section id="team"><div class="section-heading"><h2>The team behind the server.</h2><p>Live staff directory from Discord.</p></div><div class="team-grid" id="team-grid"><p class="muted">Loading team profiles...</p></div></section>
-      <section id="visa" style="text-align:center"><div class="eyebrow">Your next chapter</div><h2>Ready to enter the city?</h2><p style="color:var(--muted)">Apply through Discord and take your place in Legendary Roleplay.</p><a class="button" href="https://discord.gg/SbNU8h5P68" target="_blank" rel="noreferrer">Get visa on Discord</a></section>
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="eyebrow">Namma Ooru · Namma Story · Namma RP</div><img class="hero-logo" src="logo.png"
+            alt="Legendary Roleplay logo" onerror="this.style.display='none'">
+          <h1>Legendary Roleplay <span>MTA</span></h1>
+          <p>A living city built for players who want fair systems, serious stories, and the freedom to make their own
+            legacy.</p><a class="button" href="#visa">Get your visa</a>
+        </div>
+      </section>
+      <section id="features">
+        <div class="section-heading">
+          <h2>Built for the long run.</h2>
+          <p>Play with purpose.</p>
+        </div>
+        <div class="features">
+          <article class="feature"><b>24 / 7</b>
+            <h3>Uptime</h3>
+            <p>The city stays ready whenever your next chapter begins.</p>
+          </article>
+          <article class="feature"><b>01</b>
+            <h3>Fair whitelist system</h3>
+            <p>A clear process that rewards preparation and good roleplay.</p>
+          </article>
+          <article class="feature"><b>02</b>
+            <h3>Gang RP</h3>
+            <p>Build crews, rivalries, alliances, and stories worth remembering.</p>
+          </article>
+          <article class="feature"><b>03</b>
+            <h3>Classic roleplay</h3>
+            <p>Balanced systems, human moderation, and an immersive world.</p>
+          </article>
+        </div>
+      </section>
+      <section id="rules">
+        <div class="section-heading">
+          <h2>Read rules By Clicking below.</h2>
+          <p>Every good story has rules.</p>
+        </div>
+        <div class="rules-grid"><a class="rule-link"
+            href="https://legendaryroleplaymta.github.io/Discord_rules/"><span>01 / COMMUNITY</span>
+            <h3>Discord Rules</h3>
+          </a><a class="rule-link" href="https://legendaryroleplaymta.github.io/RP-rules/"><span>02 / IMMERSION</span>
+            <h3>RP Rules</h3>
+          </a><a class="rule-link" href="https://legendaryroleplaymta.github.io/Gang-rules/"><span>03 / FACTIONS</span>
+            <h3>Gang Rules</h3>
+          </a>
+          <div class="rule-link disabled" aria-disabled="true"><span>04 / CRIME</span>
+            <h3>Robbery Rules</h3>
+            <p style="color:var(--pink); margin:12px 0 0; font:700 .72rem Arial, sans-serif; text-transform:uppercase;">
+              Coming soon</p>
+          </div>
+        </div>
+      </section>
+      <section id="team">
+        <div class="section-heading">
+          <h2>The team behind the server.</h2>
+          <p>Live staff directory from Discord.</p>
+        </div>
+        <div class="team-grid" id="team-grid">
+          <p class="muted">Loading team profiles...</p>
+        </div>
+      </section>
+      <section id="visa" style="text-align:center">
+        <div class="eyebrow">Your next chapter</div>
+        <h2>Ready to enter the city?</h2>
+        <p style="color:var(--muted)">Apply through Discord and take your place in Legendary Roleplay.</p><a
+          class="button" href="https://discord.gg/SbNU8h5P68" target="_blank" rel="noreferrer">Get visa on Discord</a>
+      </section>
     </main>
     <footer>LEGENDARY ROLEPLAY MTA · BUILT FOR STORIES THAT LAST</footer>
   </div>
@@ -156,6 +713,10 @@
       gate.classList.add("hidden");
       loader.classList.remove("hidden");
 
+      const introAudio = document.getElementById("intro-audio");
+      introAudio.volume = 1;
+      introAudio.play().catch(() => { });
+
       let finished = false;
       const loadingStartedAt = Date.now();
       const minimumLoadingTime = 9000;
@@ -170,6 +731,14 @@
         if (finished) return;
         finished = true;
         loadingBar.style.width = "100%";
+        const fadeAudio = setInterval(() => {
+          introAudio.volume = Math.max(0, introAudio.volume - 0.08);
+          if (introAudio.volume <= 0.05) {
+            clearInterval(fadeAudio);
+            introAudio.pause();
+            introAudio.currentTime = 0;
+          }
+        }, 80);
         loader.classList.add("hidden");
         site.classList.add("ready");
       };
@@ -238,4 +807,5 @@
     }
   </script>
 </body>
+
 </html>
